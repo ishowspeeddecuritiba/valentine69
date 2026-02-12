@@ -175,24 +175,33 @@ function mostrar(){
 }
 </script>
 
-<audio id="bgm" loop>
-  <source src="music.mp3" type="audio/mpeg">
+<audio id="bgm" loop preload="auto">
+  <source src="./music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-const audio = document.getElementById("bgm");
+window.addEventListener("load", () => {
+  const audio = document.getElementById("bgm");
 
-// tenta autoplay
-audio.play().catch(() => {
-  // se bloquear, toca quando clicar em qualquer lugar
-  document.addEventListener("click", () => {
-    audio.play();
-  }, { once:true });
+  const tryPlay = () => {
+    audio.volume = 0.7;
+    audio.play().catch(()=>{});
+  };
+
+  // tenta autoplay
+  tryPlay();
+
+  // fallback em qualquer interação
+  ["click","touchstart","keydown"].forEach(evt => {
+    document.addEventListener(evt, tryPlay, { once:true });
+  });
 });
 </script>
 
+
 </body>
 </html>
+
 
 
 
