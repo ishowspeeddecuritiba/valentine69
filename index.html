@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Para Tainara ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#ff7aa2,#ffb6c1);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:20px;
+  position:relative;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(12px);
+  border-radius:24px;
+  padding:28px;
+  max-width:420px;
+  width:100%;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation:fadeIn 1.4s ease;
+  position:relative;
+  z-index:2;
+}
+
+h1{
+  font-size:1.8rem;
+  margin-bottom:14px;
+}
+
+p{
+  font-size:1.05rem;
+  line-height:1.6;
+  margin-bottom:18px;
+}
+
+.heart{
+  font-size:2.2rem;
+  animation:pulse 1.6s infinite;
+  margin-bottom:14px;
+}
+
+button{
+  border:none;
+  border-radius:999px;
+  padding:12px 22px;
+  background:#fff;
+  color:#ff5c8a;
+  font-weight:600;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+button:hover{
+  transform:scale(1.05);
+  box-shadow:0 6px 14px rgba(0,0,0,0.25);
+}
+
+.hidden{
+  display:none;
+  margin-top:18px;
+}
+
+/* FOTOS LADO */
+.side{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.left{
+  right: calc(50% + 240px);
+}
+
+.right{
+  left: calc(50% + 240px);
+}
+
+.side img{
+  width:110px;
+  border-radius:16px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.35);
+}
+
+/* MOBILE — esconder fotos pra não quebrar layout */
+@media(max-width:900px){
+  .side{ display:none; }
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- FOTOS -->
+<div class="side left">
+  <img src="Screenshot_3.png">
+  <img src="Screenshot_4.png">
+</div>
+
+<div class="side right">
+  <img src="Screenshot_5.png">
+  <img src="Screenshot_6.png">
+</div>
+
+<!-- CARD -->
+<div class="card">
+  <div class="heart">❤️</div>
+  <h1>Tainara</h1>
+
+  <p>
+Talvez a gente não divida o mesmo espaço todos os dias,
+mas divide algo muito maior que isso. Mesmo com quilômetros entre nós,
+eu nunca senti algo tão próximo, tão real, tão forte.
+Nosso relacionamento mostra que o que a gente tem vai além disso.
+Não é sobre estar perto fisicamente.
+É sobre como a gente se entende, se apoia e faz dar certo mesmo assim.
+  </p>
+
+  <p>
+Cada conversa, cada risada, cada momento compartilhado por uma tela
+só reforça o quanto a gente funciona juntos.
+Às vezes eu paro pra pensar e parece simples demais pra ser coincidência.
+Como se a gente tivesse sido encaixado um no outro do jeito certo,
+literalmente feitos um para o outro.
+  </p>
+
+  <p>
+E mesmo que o mundo chame isso de distância,
+pra mim você está presente nos meus dias, nas minhas decisões
+e no meu coração o tempo inteiro.
+Amar você é natural, leve e a melhor certeza que eu já tive.
+  </p>
+
+  <button onclick="mostrar()">Clica aqui ❤️</button>
+
+  <p id="msg" class="hidden">
+Feliz Valentine’s 💌<br>
+Tainara, você é o amor da minha vida e isso só fica mais claro a cada dia.
+  </p>
+</div>
+
+<script>
+function mostrar(){
+  document.getElementById('msg').classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
