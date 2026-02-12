@@ -175,13 +175,25 @@ function mostrar(){
 }
 </script>
 
-<!-- MUSICA -->
-<audio id="bgm" autoplay loop>
+<audio id="bgm" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+<script>
+const audio = document.getElementById("bgm");
+
+// tenta autoplay
+audio.play().catch(() => {
+  // se bloquear, toca quando clicar em qualquer lugar
+  document.addEventListener("click", () => {
+    audio.play();
+  }, { once:true });
+});
+</script>
+
 </body>
 </html>
+
 
 
 
